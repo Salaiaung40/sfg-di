@@ -2,12 +2,14 @@ package salai.springframework.sfg.di.controllers;
 //Controller another method with the property Injection method
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import salai.springframework.sfg.di.services.GreetingService;
 
 @Controller
 public class PropertyInjectedController {
 
+    @Qualifier ("propertyInjectedGreetingService")
     @Autowired // this is telling Spring that inject this. Only place at the beginning.
     public GreetingService greetingService;
 

@@ -2,16 +2,14 @@ package salai.springframework.sfg.di.controllers;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import salai.springframework.sfg.di.services.GreetingServiceImpl;
-
-import static org.junit.jupiter.api.Assertions.*;
+import salai.springframework.sfg.di.services.ConstructorGreetingService;
 
 class PropertyInjectedControllerTest {
     PropertyInjectedController controller;
     @BeforeEach
     void setUP() {
         controller =  new PropertyInjectedController();
-        controller.greetingService = new GreetingServiceImpl();
+        controller.greetingService = new ConstructorGreetingService();
     }
 
     @Test
