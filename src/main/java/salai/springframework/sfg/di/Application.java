@@ -3,10 +3,7 @@ package salai.springframework.sfg.di;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import salai.springframework.sfg.di.controllers.ConstructorInjectedController;
-import salai.springframework.sfg.di.controllers.MyController;
-import salai.springframework.sfg.di.controllers.PropertyInjectedController;
-import salai.springframework.sfg.di.controllers.SetterInjectedController;
+import salai.springframework.sfg.di.controllers.*;
 
 @SpringBootApplication
 public class Application {
@@ -14,6 +11,13 @@ public class Application {
     public static void main(String[] args) {
 
         ApplicationContext ctx = SpringApplication.run(Application.class, args);
+
+
+        System.out.println("----------------- I18n controller ");
+        I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+        System.out.println(i18nController.sayHello());
+
+
         MyController myController = (MyController) ctx.getBean("myController");
 
 		/*
